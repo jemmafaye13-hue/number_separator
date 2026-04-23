@@ -8,16 +8,19 @@ class GWAAnalyzer:
                 top_student_name = None
                 highest_gwa_value = 5.0
 
-            for line in gwa_records:
-                if line.strip():
-                name, gwa = line.strip().split(',')
-                if float(gwa) < highest_gwa_value:
-                    highest_gwa_value = float(gwa)
-                    top_student_name = name
+                for line in gwa_records:
+                    if line.strip():
+                        name, gwa = line.strip().split(',')
+                        if float(gwa) < highest_gwa_value:
+                            highest_gwa_value = float(gwa)
+                            top_student_name = name
 
-            if top_student_name:
-                print(f"Top Student: {top_student_name} with GWA of {highest_gwa_value}")
+                if top_student_name:
+                    print(f"Top Student: {top_student_name} with GWA of {highest_gwa_value}")
 
-    except FileNotFoundError:
-        print("File not found.")
-    
+        except FileNotFoundError:
+            print("File not found.")
+
+if __name__ == "__main__":
+    analyzer = GWAAnalyzer("student_gwa.txt")
+    analyzer.find_highest_gwa()

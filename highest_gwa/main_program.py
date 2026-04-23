@@ -14,3 +14,10 @@ class GWAAnalyzer:
                 if float(gwa) < highest_gwa_value:
                     highest_gwa_value = float(gwa)
                     top_student_name = name
+
+            if top_student_name:
+                print(f"Top Student: {top_student_name} with GWA of {highest_gwa_value}")
+
+    except FileNotFoundError:
+        print("File not found.")
+    

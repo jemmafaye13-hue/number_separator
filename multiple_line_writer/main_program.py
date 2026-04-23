@@ -16,3 +16,7 @@ class MultiLineWriter:
                 if choice != 'y':
                     more_lines = False
         print("Done! Lines have been saved.")
+
+if __name__ == "__main__":
+    writer = MultiLineWriter("mylife.txt")
+    writer.start_writing()
